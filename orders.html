@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Software</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/orders-styles.css">
+</head>
+
+<body>
+    <div id="menu">
+        <div id="menu-logo">
+            <h1>Bill</h1>
+        </div>
+        <div class="line">
+
+        </div>
+        <div class="menu-item" id="dashboard-btn">
+            <a href="/index.html">Dashboard</a>
+        </div>
+        <div class="menu-item" id="orders-btn">
+            <a href="/orders.html">Orders</a>
+        </div>
+        <div class="menu-item" id="billing-btn">
+            <a href="/billing.html">Billing</a>
+        </div>
+        <div class="menu-item" id="inventory-btn">
+            <a href="/inventory.html">Inventory</a>
+        </div>
+        <div class="menu-item" id="customers-btn">
+            <a href="/customers.html">Customers</a>
+        </div>
+    </div>
+
+    <div id="main-body">
+        <div id="navbar">
+            <div id="navbar-info">
+                <div id="user">Savi</div>
+                <div id="location">Orders</div>
+            </div>
+            <div id="navbar-controls">
+                <button onclick="showMenu()"><img id='menu-status' src="/icons/menu.SVG" alt=""></button>
+                <button onclick="displayUserProfile()"><img src="/icons/user.SVG" alt=""></button>
+                <div id="user-profile">
+                    <p>Logged in</p>
+                    <h2>Savi</h2>
+                    <button>Log Out</button>
+                </div>
+                <button onclick="displayUserSettings()"><img src="/icons/settings.SVG" alt=""></button>
+                <div id="user-settings">
+                    <h5>Change Username</h5>
+                    <hr>
+                    <h5>Change Password</h5>
+                    <hr>
+                    <h5>Manage Bank</h5>
+                </div>
+            </div>
+        </div>
+        <button id="back-btn" onclick="myFunction()">Go Back </button>
+
+
+
+        <div id="customer-orders">
+
+            <div id="custom-order-headers">
+                <h2>Customer Name</h2>
+            </div>
+
+            <div id="custom-order-items">
+                <table id="custom-order-table">
+                    <th>ORDER ID</th>
+                    <th>Date Total</th>
+                    <th>Date Placed</th>
+                    <th>Cart</th>
+
+                   
+                        <!-- <tr class="order">
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><button onclick="displayCart()">
+                                <img width="20px" src="/icons/cart.SVG" alt="" srcset="">
+                                
+                            </button>
+                            <div class="cart-content">
+                                    
+                            </div></td>
+                        </tr> -->
+                        <!-- <tr class="order">
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><button onclick="displaySome()"><img width="25px" src="/icons/cart.SVG" alt="" srcset=""></button></td>
+                        </tr> -->
+                   
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div id="orders">
+            <div id="order-headers">
+                <h2>ORDERS</h2>
+            </div>
+
+            <div id="order-items">
+
+                <table id="orders-table">
+                    <th>ORDER ID</th>
+                    <th>Customer Name</th>
+                    <th>Total</th>
+                    <th>Date Placed</th>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/orders.js"></script>
+</body>
+
+</html>

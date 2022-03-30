@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Software</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/inventory-styles.css">
+</head>
+
+<body>
+    <div id="menu">
+        <div id="menu-logo">
+            <h1>Bill</h1>
+        </div>
+        <div class="line">
+
+        </div>
+        <div class="menu-item" id="dashboard-btn">
+            <a href="/index.html">Dashboard</a>
+        </div>
+        <div class="menu-item" id="orders-btn">
+            <a href="/orders.html">Orders</a>
+        </div>
+        <div class="menu-item" id="billing-btn">
+            <a href="/billing.html">Billing</a>
+        </div>
+        <div class="menu-item" id="inventory-btn">
+            <a href="/inventory.html">Inventory</a>
+        </div>
+        <div class="menu-item" id="customers-btn">
+            <a href="/customers.html">Customers</a>
+        </div>
+    </div>
+
+    <div id="main-body">
+        <div id="navbar">
+            <div id="navbar-info">
+                <div id="user">Savi</div>
+                <div id="location">Inventory</div>
+            </div>
+            <div id="navbar-controls">
+                <button onclick="showMenu()"><img id='menu-status' src="/icons/menu.SVG" alt=""></button>
+                <button onclick="displayUserProfile()"><img src="/icons/user.SVG" alt=""></button>
+                <div id="user-profile">
+                    <p>Logged in</p>
+                    <h2>Savi</h2>
+                    <button>Log Out</button>
+                </div>
+                <button onclick="displayUserSettings()"><img src="/icons/settings.SVG" alt=""></button>
+                <div id="user-settings">
+                    <h5>Change Username</h5><hr>
+                    <h5>Change Password</h5><hr>
+                    <h5>Manage Bank</h5>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+            <div id="products">
+                <button onclick='displayProducts()' class="drop-btn">Products</button>
+                <div id="products-content">
+                    <center><form action="" id="add-product">
+                        <div>
+                            <label for=""> ID</label>
+                            <input type="text"><br>
+                        </div>
+                        <div>
+                            <label for=""> Type</label>
+                            <input type="text" name="" id=""><br>
+                        </div>
+                        <div>
+                            <label for=""> Brand</label>
+                            <input type="text"><br>
+                        </div>
+                        <div>
+                            <label for=""> Price</label>
+                            <input type="text"><br>
+                        </div>
+                        <div>
+                            <label for=""> Size</label>
+                            <input type="text"><br>
+                        </div>
+                        <div>
+                            <label for=""> Quantity</label>
+                            <input type="text"><br>
+                        </div>
+                        <button type="button" onclick="addProduct()">Add Product</button>
+                        
+                    </center>
+                    <br>
+
+
+                    </form>
+                    <div>
+                        <table id="product-table">
+                            <th>ID</th>
+                            <th>TYPE</th>
+                            <th>BRAND</th>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            
+                        </table>
+
+                        
+
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div id="brands">
+                <button onclick="displayBrands()" class="drop-btn">Brands</button>
+                <div id="brands-content">
+                </div>
+            </div>
+            <br>
+            <div id="sizes">
+                <button onclick="displaySizes()" class="drop-btn">Sizes</button>
+                <div id="sizes-content"></div>
+            </div>
+            <br>
+            <div id="categories">
+                <button onclick="displayCategories()" class="drop-btn">Categories</button>
+                <div id="categories-content"></div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/inventory-script.js"></script>
+    
+</body>
+
+</html>

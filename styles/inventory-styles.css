@@ -1,0 +1,104 @@
+
+
+
+#menu{
+    display: none;
+}
+.drop-btn{
+    font-family: 'Raleway';
+    text-align: start;
+    font-weight: 700;
+    z-index: 2;
+    position: relative;
+    top:-1.5rem;
+    left: 2rem;
+    border: none;
+    width: 95%;
+    height: 5rem;
+    font-size: 1rem;
+    margin: 15px;
+    border-radius: 8px;
+    color: white;
+    background-image: linear-gradient(90deg,rgb(220, 34, 100),rgb(247, 76, 116));
+ 
+    box-shadow: 2px 2px 5px 1px rgb(220, 34, 100);
+
+}
+
+
+#user{
+
+    position: relative;
+    top: 0.5rem;
+}
+
+
+
+/* CONTENT STYLING */
+#brands-content,#products-content,#sizes-content,#categories-content{
+    position: relative;
+    text-align: center;
+    display: none;
+    font-family: 'Prompt';
+}
+
+#brands,#products,#sizes,#categories{
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+}
+
+
+
+/* ADD PRODUCT FORM STYLING */
+#add-product{
+    width: 300px;
+    border: solid;
+    
+}
+
+#add-product div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#add-product div label{
+    width: 100px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+
+
+
+
+.product,.brand,.size,.category{
+    text-align: center;
+    padding: 5px;
+    border-bottom: solid rgba(0,0,0,0.2);
+    height:4rem;
+    font-family: 'Raleway';
+    color: rgba(0,0,0,0.6);
+}
+
+.brand h2{
+    font-family: 'Raleway';
+    
+
+}
+
+#product-table {
+    font-family: 'Prompt';
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    
+}
+
+#product-table th{
+    color: rgb(162,166,184);
+}

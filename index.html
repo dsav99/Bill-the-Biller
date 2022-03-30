@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Software</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div id="menu">
+        <div id="menu-logo">
+            <h1>Bill</h1>
+        </div>
+        <div class="line">
+
+        </div>
+       <div class="menu-item" id="dashboard-btn">
+        <a href="#dashboard">Dashboard</a>
+       </div>
+       <div class="menu-item" id="orders-btn">
+        <a href="/orders.html">Orders</a>
+        </div>
+        <div class="menu-item" id="billing-btn">
+            <a href="/billing.html">Billing</a>
+        </div>
+        <div class="menu-item" id="inventory-btn">
+            <a href="/inventory.html">Inventory</a>
+        </div>
+        <div class="menu-item" id="customers-btn">
+            <a href="/customers.html">Customers</a>
+        </div>
+    </div>
+
+    <div id="main-body">
+        <div id="navbar">
+            <div id="navbar-info">
+                <div id="user">Savi</div>
+                <div id="location">Dashboard</div>
+            </div>
+            <div id="navbar-controls">
+                <button onclick="showMenu()"><img id='menu-status' src="/icons/menu.SVG" alt=""></button>
+                <button onclick="displayUserProfile()"><img src="/icons/user.SVG" alt=""></button>
+                <div id="user-profile">
+                    <p>Logged in</p>
+                    <h2>Savi</h2>
+                    <button>Log Out</button>
+                </div>
+                <button onclick="displayUserSettings()"><img src="/icons/settings.SVG" alt=""></button>
+                <div id="user-settings">
+                    <h5>Change Username</h5><hr>
+                    <h5>Change Password</h5><hr>
+                    <h5>Manage Bank</h5>
+                </div>
+            </div>
+        </div>
+        <div id="stats">
+            <div class="stat-card" id="sales-count">
+                <div class="card-icon">
+                    <img src="/icons/money.SVG" alt="">
+                </div>
+                <div class="card-content">
+                    <p>Total Sale</p>
+                    <h1 id="total-sales"></h1>
+                </div>
+                
+            </div>
+            <div class="stat-card" id="customers-count">
+                <div class="card-icon">
+                    <img src="/icons/customer.SVG" alt="" srcset="">
+                </div>
+                <div class="card-content">
+                    <p>Total Customers</p>
+                    <h1>3,412</h1>
+                </div>
+                
+            </div>
+            <div class="stat-card" id="new-customers">
+                <div class="card-icon">
+                    <img src="/icons/new-client.SVG" alt="">
+                </div>
+                <div class="card-content">
+                    <p>New Clients</p>
+                    <h1>256</h1>
+                </div>
+                
+            </div>
+            <div class="stat-card" id="stock-value">
+                <div class="card-icon">
+                    <img src="/icons/inventory.SVG" alt="" srcset="">
+                </div>
+                <div class="card-content">
+                    <p>Inventory Value</p>
+                    <h1>241K$</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/dashboard.js"></script>
+</body>
+</html>

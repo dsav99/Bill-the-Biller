@@ -1,0 +1,115 @@
+/* body{
+    background-color: green;
+    color: white;
+} */
+
+
+
+#orders{
+    border: solid;
+    border-radius: 5px;
+    font-family: 'Prompt';
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 1px 1px 5px 1px rgb(220, 34, 100);
+}
+
+
+#order-headers{
+    margin: 5px 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid;
+}
+
+.order-item{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
+    height: 0.1em;
+    font-weight: 200;
+    margin: 10px 0;
+}
+
+table{
+    width: 100%;
+    border: solid ;
+    border-collapse: collapse;
+}
+.order{
+    text-align: center;
+    border: solid;
+    font-family: 'Prompt';
+}
+
+td button{
+    font-family: 'Prompt';
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+#customer-orders{
+   
+    display: none;
+    padding: 20px;
+    
+    font-family: 'Prompt';
+    width: 95%;
+    opacity: 1;
+    background-color: white;
+    border-radius: 8px;
+    border: solid;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
+    /* position: absolute; */
+}
+
+#back-btn{
+    display: none;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Prompt';
+}
+
+.cart-custom{
+    /* height: 100px; */
+    /* width: 200px; */
+    padding: 10px;
+    position: absolute;
+    background-color: red;
+    border: solid;
+    display: none;
+    right: 20px;
+    
+}
+
+td button{
+    color: red;
+
+}
+
+td:hover{
+    color: green;
+}
+
+.cart-content{
+    display: none;
+    position: absolute;
+    left: 85%;
+    width: 100px;
+    /* height: 100px; */
+    /* background-color: red; */
+    background-color: white;
+    border: solid 2px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
+    
+}
+
+
+

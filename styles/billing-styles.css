@@ -1,0 +1,94 @@
+body{
+    font-family: 'Prompt';
+}
+
+form{
+    /* border: solid; */
+    margin: 10px 0;;
+}
+
+form label{
+    display: inline-block;
+    width: 200px;
+   /* border: solid; */
+}
+
+form input{
+    height: 2rem;
+    width: 12rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Prompt';
+    font-size: 1.5rem;
+    background-color: rgb(220, 34, 100,0.6);
+    border: none;
+}
+
+#cart{
+    border: solid;
+    border-radius: 5px;
+    font-family: 'Prompt';
+    padding: 0 2rem;
+    background-color: white;
+    box-shadow: 1px 1px 5px 1px rgb(220, 34, 100);
+}
+
+
+#cart-headers{
+    
+    margin: 5px 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid;
+}
+
+#cart-headers button{
+    font-family: 'Prompt';
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+    border-radius: 8px;
+    background-color: rgb(220, 34, 100);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
+    width: 20%;
+    height: 2rem;
+}
+
+.cart-item{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
+    height: 0.1em;
+    font-weight: 200;
+    margin: 10px 0;
+}
+
+.new-item{
+    display: none;
+}
+
+.item-description{
+    display: flex;
+}
+.item-description img{
+
+    margin: 1rem;
+    width: 20px;
+}
+
+.item-description p{
+    display: inline-block;
+}
+
+#cart-total{
+    float: right;
+    padding-right: 1.5rem;
+    font-size: 2rem;
+    color: rgb(220, 34, 100);;
+}

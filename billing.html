@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Billing</title>
+    <link rel="stylesheet" href="/styles/billing-styles.css">
+</head>
+
+<body>
+
+    <div id="menu">
+        <div id="menu-logo">
+            <h1>Bill</h1>
+        </div>
+        <div class="line">
+
+        </div>
+        <div class="menu-item" id="dashboard-btn">
+            <a href="/index.html">Dashboard</a>
+        </div>
+        <div class="menu-item" id="orders-btn">
+            <a href="/orders.html">Orders</a>
+        </div>
+        <div class="menu-item" id="billing-btn">
+            <a href="/billing.html">Billing</a>
+        </div>
+        <div class="menu-item" id="inventory-btn">
+            <a href="/inventory.html">Inventory</a>
+        </div>
+        <div class="menu-item" id="customers-btn">
+            <a href="/customers.html">Customers</a>
+        </div>
+    </div>
+    <div id="main-body">
+        <div id="navbar">
+            <div id="navbar-info">
+                <div id="user">Savi</div>
+                <div id="location">Billing</div>
+            </div>
+            <div id="navbar-controls">
+                <button onclick="showMenu()"><img id='menu-status' src="/icons/menu.SVG" alt=""></button>
+                <button onclick="displayUserProfile()"><img src="/icons/user.SVG" alt=""></button>
+                <div id="user-profile">
+                    <p>Logged in</p>
+                    <h2>Savi</h2>
+                    <button>Log Out</button>
+                </div>
+                <button onclick="displayUserSettings()"><img src="/icons/settings.SVG" alt=""></button>
+                <div id="user-settings">
+                    <h5>Change Username</h5><hr>
+                    <h5>Change Password</h5><hr>
+                    <h5>Manage Bank</h5>
+                </div>
+            </div>
+        </div>
+
+        <div id="billing">
+            <div>
+            <form id="customer-name-form" action="">
+                <label for="" >Enter Customer Name:</label>
+                <input type="text" required>
+            </form>
+            <form id="cart-form" action="">
+                <br>
+                <label for="">Enter Product ID:</label>
+                <input id="new-item-id" type="text" name="" id=""><br>
+                <br>
+                <label for="">Enter Product Quantity:</label>
+                <input type="text" name="" id=""><br>
+                <div class="cart-item new-item">
+                    <div class="item-description">
+                        Shirt
+                    </div>
+                    <input type='button' value="ADD" onclick="addItem()">
+                    
+                </div>
+                
+            </form>
+            <div id="cart">
+                <div id="cart-headers">
+                    <h2>CART</h2>
+                    <button onclick="generateBill()">Generate Bill</button>
+                </div>
+                <div id="cart-items">
+                    
+                </div>
+            </div>
+            <div id="cart-total">
+                Total: Rs. <span id="total-cart"></span>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/billing.js"></script>
+</body>
+
+</html>

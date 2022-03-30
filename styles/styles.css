@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    /* border: solid; */
+    margin-bottom: 5rem;
+}
+
+#navbar-info{
+    /* border: solid; */
+    position: relative;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+#navbar-controls{
+    display: flex;
+    /* position: relative; */
+    justify-content: center;
+    align-items: center;
+    /* border: solid; */
+    width: 30%;
+}
+
+#navbar-controls img{
+    width: 20px;
+    margin: 1rem;
+}
+#navbar-controls input{
+    width: 20px;
+}
+
+
+body{
+    background-color: rgb(239,242,245);
+}
+
+#menu{
+    background-image: repeating-linear-gradient(rgba(61,60,67),rgba(50,50,50) 50%,rgba(60,60,60));
+    width: 200px;
+    height: 95vh;
+    border-radius: 10px;
+    color: aliceblue;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    z-index: 3;
+}
+.line{
+    background-color: white;
+    height: 1px;
+    margin-bottom: 10px;
+}
+
+#menu-logo{
+    text-align: center;
+}
+
+
+.menu-item{
+    text-align: start;
+    padding: 10px;
+    border-radius: 5px;
+    /* background-color: rgb(235,50,110); */
+    margin: 10px;
+}
+
+.menu-item a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.menu-item:hover{
+
+    background-color: rgb(235,50,110);
+
+}
+
+
+
+
+button{
+    border: none;
+    background-color: transparent;
+}
+
+button:hover{
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+button.drop-btn:hover{
+    transform: scale(1.1) translateX(-1rem);
+    transition: transform 0.5s ease;
+
+}
+/* MAIN BODY STYLES */
+
+#user{
+    margin: 0 30px;
+    font-family: 'Raleway';
+    font-weight: 300;
+}
+
+#location{
+    margin: 30px;
+    font-family: 'Raleway';
+    font-weight: 800;
+}
+
+#main-body{
+    position: relative;
+    margin:0 2rem;
+    font-weight: bold;
+}
+
+#stats{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.stat-card{
+
+    padding: 10px;
+    margin: 10px;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2),
+                0px 0px 20px 0px rgba(0,0,0,0.2);
+    font-family: 'Prompt';                
+}
+
+.stat-card p{
+    color: gray;
+    font-weight: 300;
+}
+
+.stat-card h1{
+    margin-top: 0;
+    position: relative;
+    bottom: 10px;
+}
+
+
+
+.card-icon{
+    height: 100px;
+    width: 100px;
+    /* background-color: lightblue; */
+    position: relative;
+    bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px px rgba(0,0,0,0.2),
+                0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+
+.card-content{
+   position: relative;
+   bottom: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: flex-end;
+   /* background-color: red; */
+}
+
+
+#user-profile,#user-settings{
+    display: none;
+    z-index: 10;
+    font-family: 'Prompt';
+    text-align: center;
+    padding: 10px;
+    top: 4rem;
+    position: absolute;
+    width: 10rem;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.5);
+}
+
+
+
+#user-profile p{
+    font-weight: 300;
+    color: gray;
+}
+
+#user-profile button{
+    background-color: rgb(252, 63, 94);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+
+
