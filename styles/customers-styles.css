@@ -1,0 +1,49 @@
+/* body{
+    background-color: green;
+    color: white;
+} */
+
+
+
+#customers{
+    border: solid;
+    border-radius: 5px;
+    font-family: 'Prompt';
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 1px 1px 5px 1px rgb(220, 34, 100);
+}
+
+
+#customers-headers{
+    margin: 5px 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid;
+}
+
+table{
+    width: 100%;
+    border: solid ;
+    border-collapse: collapse;
+}
+.customer{
+    text-align: center;
+    border: solid;
+    font-family: 'Prompt';
+}
+
+td button{
+    font-family: 'Prompt';
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+

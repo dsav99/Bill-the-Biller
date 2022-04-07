@@ -1,14 +1,21 @@
 // const db = openDatabase('Clothing-shop', '1.0', 'data', 1 * 1024 * 1024);
+// db.transaction(t => {
+//     t.executeSql('DROP TABLE orders', [], function (t, results) {
+//         console.log(results.rows);
+//     })
+// });
+
+
+
+db.transaction(t=>{
+    t.executeSql('CREATE TABLE IF NOT EXISTS orders (orderId NUMBER,customerId NUMBER, date TEXT, total NUMBER, cart TEXT)');
+    // t.executeSql('INSERT INTO orders VALUES(?,?,?,?,?)',[219,22,'today',3000,'My cart']);
+})
+
+
 db.transaction(t => {
-    t.executeSql('SELECT * FROM orders)', [], function (t, results) {
+    t.executeSql('SELECT * FROM orders', [], function (t, results) {
         console.log(results.rows);
-    })
-});
-
-
-
-db.transaction(t => {
-    t.executeSql('SELECT orderId,name,datePlaced,total FROM orders', [], function (t, results) {
         for (let order in results.rows) {
 
             const currentOrder = results.rows[order];
@@ -24,9 +31,9 @@ db.transaction(t => {
                 const nameButton = document.createElement('button');
                 nameButton.setAttribute('onclick', 'displayCustomerOrders(this.innerHTML)');
                 name.append(nameButton);
-                nameButton.innerHTML = currentOrder.name;
+                nameButton.innerHTML = currentOrder.customerId;
                 const date = document.createElement('td');
-                date.innerHTML = currentOrder.datePlaced;
+                date.innerHTML = currentOrder.date;
                 const total = document.createElement('td');
                 total.innerHTML = currentOrder.total;
 
@@ -47,12 +54,17 @@ function displayCustomerOrders(customer) {
     document.getElementById('orders').style.opacity = 0;
     document.getElementById('customer-orders').style.display = 'block';
     document.getElementById('back-btn').style.display = 'block';
+    db.transaction(t=>{
+        t.executeSql(`SELECT * FROM orders INNER JOIN customers ON orders.customerId = customers.customerId WHERE customers.customerId = "${customer}"`,[],function(t,results){
+            console.log(results.rows);
+        })
+    })
 
     db.transaction(t => {
-        t.executeSql(`SELECT * FROM orders WHERE name ="${customer}"`, [], function (t, results) {
+        t.executeSql(`SELECT * FROM orders INNER JOIN customers ON orders.customerId = customers.customerId WHERE customers.customerId = "${customer}"`, [], function (t, results) {
             const orderValue = results.rows;
             console.log(orderValue);
-            document.querySelector('#custom-order-headers h2').innerHTML = customer;
+            document.querySelector('#custom-order-headers h2').innerHTML = orderValue[0].customerName;
 
             for (let i = 0; i < results.rows.length; i++) {
 
@@ -64,7 +76,7 @@ function displayCustomerOrders(customer) {
                 const orderTotal = document.createElement('td');
                 orderTotal.innerHTML = orderValue[i].total;
                 const orderDate = document.createElement('td');
-                orderDate.innerHTML = orderValue[i].datePlaced;
+                orderDate.innerHTML = orderValue[i].date;
                 const orderCart = document.createElement('td');
                 const cartButton = document.createElement('button');
                 cartButton.setAttribute('id', orderValue[i].orderId);

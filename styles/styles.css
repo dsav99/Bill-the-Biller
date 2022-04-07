@@ -2,11 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
+body{
+    font-family: 'Prompt';
+    background-color: #EDDBCD;
+    color: #22252c;
+}
 #navbar{
     display: flex;
     justify-content: space-between;
-    /* border: solid; */
+    
+    width: 100%;
     margin-bottom: 5rem;
+    
 }
 
 #navbar-info{
@@ -24,7 +31,7 @@
     justify-content: center;
     align-items: center;
     /* border: solid; */
-    width: 30%;
+    /* width: 30%; */
 }
 
 #navbar-controls img{
@@ -36,16 +43,14 @@
 }
 
 
-body{
-    background-color: rgb(239,242,245);
-}
+
 
 #menu{
-    background-image: repeating-linear-gradient(rgba(61,60,67),rgba(50,50,50) 50%,rgba(60,60,60));
+    background-image: repeating-linear-gradient(#22252C,#3F3250);
     width: 200px;
     height: 95vh;
     border-radius: 10px;
-    color: aliceblue;
+    color: white;
     padding: 10px;
     display: none;
     position: absolute;
@@ -68,17 +73,20 @@ body{
     border-radius: 5px;
     /* background-color: rgb(235,50,110); */
     margin: 10px;
+    
 }
 
 .menu-item a{
     text-decoration: none;
     color: white;
+    
 }
 
 
 .menu-item:hover{
 
-    background-color: rgb(235,50,110);
+    background-color: #C06014;
+    
 
 }
 
@@ -91,8 +99,10 @@ button{
 }
 
 button:hover{
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
     transition: transform 0.5s ease;
+    background-color: #C06014;
+    border-radius: 10px;
 }
 
 button.drop-btn:hover{
@@ -112,6 +122,7 @@ button.drop-btn:hover{
     margin: 30px;
     font-family: 'Raleway';
     font-weight: 800;
+    font-size: 1.5rem;
 }
 
 #main-body{
@@ -135,13 +146,14 @@ button.drop-btn:hover{
     display: flex;
     justify-content: space-between;
     border-radius: 8px;
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2),
-                0px 0px 20px 0px rgba(0,0,0,0.2);
-    font-family: 'Prompt';                
+    box-shadow: 0px 0px 5px 1px rgba(240,248,255),
+                0px 0px 20px 0px rgba(240,248,255);
+    font-family: 'Prompt';  
+    background-color: #ffeded;              
 }
 
 .stat-card p{
-    color: gray;
+    color: grey;
     font-weight: 300;
 }
 
@@ -149,6 +161,7 @@ button.drop-btn:hover{
     margin-top: 0;
     position: relative;
     bottom: 10px;
+    color: #C06014;
 }
 
 
@@ -184,7 +197,9 @@ button.drop-btn:hover{
     top: 4rem;
     position: absolute;
     width: 10rem;
-    background-color: whitesmoke;
+    background-image: repeating-linear-gradient(#22252C,#3F3250);
+    /* background-color: #C06014; */
+    color: white;
     border-radius: 8px;
     box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.5);
 }
@@ -197,10 +212,17 @@ button.drop-btn:hover{
 }
 
 #user-profile button{
-    background-color: rgb(252, 63, 94);
+    background-color: #C06014;
     padding: 6px;
     border-radius: 5px;
+    color: white;
+    font-weight: 700;
 }
 
-
+#user-profile button:hover{
+    /* transform: scale(0.9); */
+    box-shadow: 1px 1px 5px 2px rgba(0,0,0);
+    background-color: white;
+    color: #22252c;
+}
 

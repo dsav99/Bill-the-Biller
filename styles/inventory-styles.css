@@ -11,20 +11,25 @@
     z-index: 2;
     position: relative;
     top:-1.5rem;
-    left: 2rem;
+    /* left: 2rem; */
     border: none;
-    width: 95%;
-    height: 5rem;
+    width: 98%;
+    height: 3rem;
     font-size: 1rem;
     margin: 15px;
     border-radius: 8px;
-    color: white;
-    background-image: linear-gradient(90deg,rgb(220, 34, 100),rgb(247, 76, 116));
+    color: #22252c;
+    /* background-image: linear-gradient(90deg,#3F3250,#22252C); */
+    background-color: #C06014;
  
     box-shadow: 2px 2px 5px 1px rgb(220, 34, 100);
 
 }
 
+button.drop-btn:hover{
+    transform: scale(1);
+    color: white;
+}
 
 #user{
 
@@ -44,8 +49,8 @@
 
 #brands,#products,#sizes,#categories{
     border-radius: 1rem;
-    background-color: white;
-    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    background-color: #ffeded;
+    box-shadow: 2px 2px 5px 1px rgba(255,255,255,0.2);
 }
 
 

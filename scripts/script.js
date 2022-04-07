@@ -2,6 +2,20 @@ const db = openDatabase('Clothing-shop', '1.0', 'data', 1 * 1024 * 1024);
 
 
 
+// db.transaction(t=>{
+//     t.executeSql('SELECT * FROM orders INNER JOIN customers ON orders.customerId = customers.customerId;',[],function(t,results){
+//         console.log(results.rows);
+//     })
+// })
+
+db.transaction(t=>{
+    t.executeSql('CREATE TABLE IF NOT EXISTS customers (customerId NUMBER,customerName TEXT)');
+    // t.executeSql('INSERT INTO customers VALUES (?,?,?)',[1,'SAVJOT',2])
+})
+
+
+
+
 
 
 

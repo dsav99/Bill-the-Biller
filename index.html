@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billing Software</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/dashboard.css">
 </head>
+
 <body>
     <div id="menu">
         <div id="menu-logo">
@@ -15,11 +18,11 @@
         <div class="line">
 
         </div>
-       <div class="menu-item" id="dashboard-btn">
-        <a href="#dashboard">Dashboard</a>
-       </div>
-       <div class="menu-item" id="orders-btn">
-        <a href="/orders.html">Orders</a>
+        <div class="menu-item" id="dashboard-btn">
+            <a href="#dashboard">Dashboard</a>
+        </div>
+        <div class="menu-item" id="orders-btn">
+            <a href="/orders.html">Orders</a>
         </div>
         <div class="menu-item" id="billing-btn">
             <a href="/billing.html">Billing</a>
@@ -48,8 +51,10 @@
                 </div>
                 <button onclick="displayUserSettings()"><img src="/icons/settings.SVG" alt=""></button>
                 <div id="user-settings">
-                    <h5>Change Username</h5><hr>
-                    <h5>Change Password</h5><hr>
+                    <h5>Change Username</h5>
+                    <hr>
+                    <h5>Change Password</h5>
+                    <hr>
                     <h5>Manage Bank</h5>
                 </div>
             </div>
@@ -63,7 +68,7 @@
                     <p>Total Sale</p>
                     <h1 id="total-sales"></h1>
                 </div>
-                
+
             </div>
             <div class="stat-card" id="customers-count">
                 <div class="card-icon">
@@ -71,19 +76,20 @@
                 </div>
                 <div class="card-content">
                     <p>Total Customers</p>
-                    <h1>3,412</h1>
+                    <h1 id="total-customers">3,412</h1>
                 </div>
-                
+
             </div>
             <div class="stat-card" id="new-customers">
                 <div class="card-icon">
                     <img src="/icons/new-client.SVG" alt="">
                 </div>
                 <div class="card-content">
-                    <p>New Clients</p>
-                    <h1>256</h1>
+                    <p>Orders this month </p>
+                    
+                    <h1 id="new-clients">256</h1>
                 </div>
-                
+
             </div>
             <div class="stat-card" id="stock-value">
                 <div class="card-icon">
@@ -91,15 +97,34 @@
                 </div>
                 <div class="card-content">
                     <p>Inventory Value</p>
-                    <h1>241K$</h1>
+                    <h1 id="total-inventory"></h1>
                 </div>
             </div>
         </div>
+
+        <div id="info">
+            <div id="weather">
+                <h2 class="info-header">Current Weather</h2>
+
+                <div  class="info-content">
+                    <div>
+                        <h4 id="weather-city"></h4>
+                        <span id="current-time"></span>
+                    </div>
+                    <div>
+                        <img id="current-weather-icon" src="" alt="" srcset="">
+                        <span id="current-temp"></span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
 
-    
-    
+
+
     <script src="/scripts/script.js"></script>
     <script src="/scripts/dashboard.js"></script>
 </body>
+
 </html>

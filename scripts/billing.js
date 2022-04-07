@@ -1,29 +1,34 @@
 // const db = openDatabase('Clothing-shop', '1.0', 'data', 1 * 1024 * 1024);
+
+// const doc = new jsPDF();
+// doc.text("Hello world!", 10, 10);
+// doc.save("a4.pdf"); // will save the file in the current working directory
 if (!JSON.parse(sessionStorage.getItem('cart'))) {
     sessionStorage.setItem('cart', JSON.stringify({cartTotal:0}));
 }
 
 
 db.transaction(t => {
-    t.executeSql('CREATE TABLE IF NOT EXISTS (id INT, type TEXT, brand TEXT,size TEXT, price NUMBER) ');
+    t.executeSql('CREATE TABLE IF NOT EXISTS products(id INT, type TEXT, brand TEXT,size TEXT, price NUMBER)');
+    
 });
 
 let products = {};
 let orderId =0 ;
+let newCustomerId =0;
 db.transaction(t=>{
     t.executeSql(`SELECT COUNT(*) FROM orders`,[],function(t,results){
         orderId = results.rows[0]['COUNT(*)']+1;
-        
     })
 })
 
 
 
-db.transaction(t=>{
-    t.executeSql('SELECT * FROM orders',[],function(t,results){
-        console.log(results.rows);
-    })
-})
+// db.transaction(t=>{
+//     t.executeSql('SELECT * FROM orders',[],function(t,results){
+//         console.log(results.rows);
+//     })
+// })
 db.transaction(t => {
 
     t.executeSql(`SELECT * FROM products`, [], function (t, results) {
@@ -164,19 +169,43 @@ function generateBill() {
     const cart = JSON.parse(sessionStorage.getItem('cart'));
     
 
-    const customerName = document.getElementById('customer-name-form').elements[0].value;
+    const customerName = document.getElementById('customer-name-form').elements[0].value.toUpperCase();
     if (customerName === '') {
         alert('Enter a name');
         return;
     }
-   
 
     db.transaction(t=>{
-        t.executeSql(`CREATE TABLE IF NOT EXISTS orders (orderId NUMBER, name TEXT, datePlaced TEXT,total NUMBER, cart TEXT )`);
-        t.executeSql(`INSERT INTO orders VALUES(?,?,?,?,?)`,[orderId,customerName,new Date().toLocaleString(),cart.cartTotal,JSON.stringify(cart)]);
-    })
+        t.executeSql(`SELECT * from customers WHERE customerName ='${customerName}' `,[],function(t,results){
+           
+            if(results.rows.length===0){
+                console.log("No such customer exists,Create One");
+                db.transaction(t=>{
+                    t.executeSql('SELECT COUNT( DISTINCT customerId) AS count FROM customers',[],function(t,results2){
+                        newCustomerId = results2.rows[0]['count']+1;
+                        console.log(newCustomerId);
+                        t.executeSql('INSERT INTO customers VALUES(?,?)',[newCustomerId,customerName]);
+                        t.executeSql(`INSERT INTO orders VALUES(?,?,?,?,?)`,[orderId,newCustomerId,new Date().toLocaleString(),cart.cartTotal,JSON.stringify(cart)]);
+                        // t.executeSql(`INSERT INTO orders VALUES(?,?,?,?,?)`,[orderId,newCustomerId,new Date().toLocaleString(),cart.cartTotal,JSON.stringify(cart)]);
+                    });
+                })
+            }
+            else{
+                console.log("Customer exists");
+                t.executeSql(`INSERT INTO orders VALUES(?,?,?,?,?)`,[orderId,results.rows[0].customerId,new Date().toLocaleString(),cart.cartTotal,JSON.stringify(cart)]);
+                // t.executeSql('INSERT INTO orders VALUES (?,?,?,?,?)',[orderId,results.rows.customerId+1,new Date().toLocaleString(),cart.cartTotal,JSON.stringify(cart)]);
+                console.log(results.rows);
+            }
+        })
+        
+    });
+
+    // db.transaction(t=>{
+    //     t.executeSql(`INSERT INTO orders VALUES(?,?,?,?,?)`,[orderId,newCustomerId,new Date().toLocaleString(),cart.cartTotal,JSON.stringify(cart)]);
+    // })
 
 
+   
     sessionStorage.setItem('cart', JSON.stringify({cartTotal:0}));
     alert('Bill prepared to print and cart cleared!')
     updateCart();
